@@ -1,0 +1,308 @@
+{
+	"info": {
+		"_postman_id": "d6afcd9b-4e49-4374-bf5a-979395ba3a37",
+		"name": "lab2-struct_in_ai",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10258449"
+	},
+	"item": [
+		{
+			"name": "POST groups",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Group A\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/groups/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"groups",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST teacher",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Teacher 1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/teachers/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"teachers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST classroom",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"number\": \"101\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/classrooms/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"classrooms",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST lessons",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"subject\": \"Math\",\n    \"time\": \"10:00\",\n    \"date\": \"2023-05-20\",\n    \"group\": \"Group A\",\n    \"teacher\": \"Teacher 1\",\n    \"classroom\": \"101\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/lessons/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"lessons",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE lesson",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/lessons/?subject=Math&amp;time=10:00&amp;date=2023-05-20&amp;group=Group A",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"lessons",
+						""
+					],
+					"query": [
+						{
+							"key": "subject",
+							"value": "Math"
+						},
+						{
+							"key": "amp;time",
+							"value": "10:00"
+						},
+						{
+							"key": "amp;date",
+							"value": "2023-05-20"
+						},
+						{
+							"key": "amp;group",
+							"value": "Group A"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find lesson",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/lessons/?subject=Math&amp;time=10:00&amp;date=2023-05-20&amp;group=Group A",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"lessons",
+						""
+					],
+					"query": [
+						{
+							"key": "subject",
+							"value": "Math"
+						},
+						{
+							"key": "amp;time",
+							"value": "10:00"
+						},
+						{
+							"key": "amp;date",
+							"value": "2023-05-20"
+						},
+						{
+							"key": "amp;group",
+							"value": "Group A"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get schedule",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/schedule/?entity_type=group&amp;name=Group A",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"schedule",
+						""
+					],
+					"query": [
+						{
+							"key": "entity_type",
+							"value": "group"
+						},
+						{
+							"key": "amp;name",
+							"value": "Group A"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update lesson",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"old_subject\": \"Math\",\n    \"old_time\": \"10:00\",\n    \"old_date\": \"2023-05-20\",\n    \"group\": \"Group A\",\n    \"new_subject\": \"Physics\",\n    \"new_time\": \"11:00\",\n    \"new_date\": \"2023-05-21\",\n    \"new_classroom\": \"102\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/lessons/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"lessons",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Analysis data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/analysis/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"analysis",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

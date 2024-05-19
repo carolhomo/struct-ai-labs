@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "0748c55f-a15b-4fcb-8858-3dbddbef0207",
+		"name": "lab3-struct_in_ai",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10258449"
+	},
+	"item": [
+		{
+			"name": "Создание файла или каталога",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"path\": \"/\",\n    \"name\": \"folder1\",\n    \"is_directory\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/create/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление файла или каталога",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/delete?path=/folder1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"delete"
+					],
+					"query": [
+						{
+							"key": "path",
+							"value": "/folder1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Перемещение файла или каталога",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"source_path\": \"/folder1\",\n    \"dest_path\": \"/\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/move/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"move",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Поиск файла или каталога по имени",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search?name=folder1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "folder1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Вывод структуры файловой системы",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/display/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"display",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Анализ данных",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/analyze?path=/folder1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"analyze"
+					],
+					"query": [
+						{
+							"key": "path",
+							"value": "/folder1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
